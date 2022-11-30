@@ -4,16 +4,26 @@ vim.filetype.add({
     }
 })
 
-local function on_attach_config()
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
-    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0})
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0})
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, {buffer=0})
-    vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer=0})
-    vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer=0})
-    vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer=0})
+local on_attach_config = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>dj', vim.lsp.buf.goto_next, bufopts)
+  vim.keymap.set('n', '<space>dk', vim.lsp.buf.goto_prev, bufopts)
+  vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", bufopts)
 end
+
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
