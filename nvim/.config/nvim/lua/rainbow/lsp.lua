@@ -19,8 +19,8 @@ local on_attach_config = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>dj', vim.lsp.buf.goto_next, bufopts)
-  vim.keymap.set('n', '<space>dk', vim.lsp.buf.goto_prev, bufopts)
+  vim.keymap.set('n', '<space>dj', vim.diagnostic.goto_next, bufopts)
+  vim.keymap.set('n', '<space>dk', vim.diagnostic.goto_prev, bufopts)
   vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", bufopts)
 end
 
