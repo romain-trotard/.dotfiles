@@ -163,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ronron/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["twoslash-queries.nvim"] = {
+    loaded = true,
+    path = "/home/ronron/.local/share/nvim/site/pack/packer/start/twoslash-queries.nvim",
+    url = "https://github.com/marilari88/twoslash-queries.nvim"
   }
 }
 
