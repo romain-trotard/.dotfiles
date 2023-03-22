@@ -28,12 +28,11 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require'lspconfig'.tsserver.setup{
-    -- By default it's { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     capabilities = capabilities,
     on_attach = function(client, bufnr) 
         on_attach_config(client, bufnr)
-        require("twoslash-queries").attach(client, bufnr)
+        -- require("twoslash-queries").attach(client, bufnr)
     end,
 }
 
