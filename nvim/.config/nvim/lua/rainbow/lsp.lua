@@ -1,3 +1,18 @@
+require('mason').setup({
+  ui = {
+    border = 'rounded'
+  }
+})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'rust_analyzer',
+    'tsserver',
+    'gopls',
+    'astro',
+    'svelte',
+  }
+})
+
 vim.filetype.add({
     extension = {
         astro = "astro",
@@ -28,7 +43,9 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require'lspconfig'.tsserver.setup{
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+    -- Uncomment the line below when working with flow files
+    -- filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     capabilities = capabilities,
     on_attach = function(client, bufnr) 
         on_attach_config(client, bufnr)

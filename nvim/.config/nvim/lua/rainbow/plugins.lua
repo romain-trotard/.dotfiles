@@ -11,13 +11,18 @@ return require('packer').startup({
         use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
         use 'ThePrimeagen/harpoon'
+        use 'mbbill/undotree'
 
         -- LSP config
         use 'neovim/nvim-lspconfig'
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/nvim-cmp'
+        use { "williamboman/mason.nvim", run = ":MasonUpdate" }
+        use "williamboman/mason-lspconfig.nvim"
+
         -- use 'marilari88/twoslash-queries.nvim'
+
         -- For luasnip users
         use 'L3MON4D3/LuaSnip'
         use 'saadparwaiz1/cmp_luasnip'
@@ -33,7 +38,9 @@ return require('packer').startup({
 
         -- Git
         use 'lewis6991/gitsigns.nvim'
+        -- Remove this later
         use 'TimUntersberger/neogit'
+        use 'tpope/vim-fugitive'
 
     end,
     config = {
