@@ -1,10 +1,2 @@
-require('rainbow.plugins')
-require('rainbow.catppuccin')
-require('rainbow.telescope')
-require('rainbow.lsp')
-require('rainbow.misc')
-require('rainbow.treesitter')
-require('rainbow.git')
-require('rainbow.undotree')
-require('rainbow.fugitive')
+require('rainbow.packer');
 

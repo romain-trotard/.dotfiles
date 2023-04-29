@@ -13,6 +13,8 @@ return require('packer').startup({
         use 'ThePrimeagen/harpoon'
         use 'mbbill/undotree'
 
+        use 'dstein64/vim-startuptime'
+
         -- LSP config
         use {
             'VonHeikemen/lsp-zero.nvim',
@@ -53,9 +55,8 @@ return require('packer').startup({
         use 'nvim-treesitter/nvim-treesitter-context'
 
         -- Git
-        use 'lewis6991/gitsigns.nvim'
+        -- use 'lewis6991/gitsigns.nvim'
         -- Remove this later
-        use 'TimUntersberger/neogit'
         use 'tpope/vim-fugitive'
 
     end,

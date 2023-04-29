@@ -1,12 +1,12 @@
 local lsp = require('lsp-zero').preset({})
 
-lsp.ensure_installed({
-    'rust_analyzer',
-    'tsserver',
-    'gopls',
-    'astro',
-    'svelte',
-})
+-- lsp.ensure_installed({
+--     'rust_analyzer',
+--     'tsserver',
+--     'gopls',
+--     'astro',
+--     'svelte',
+-- })
 
 lsp.on_attach(function(client, bufnr)
   local bufopts = { remap=false, buffer=bufnr }
