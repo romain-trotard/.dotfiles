@@ -55,7 +55,7 @@ return require('packer').startup({
         use 'nvim-treesitter/nvim-treesitter-context'
 
         -- Git
-        -- use 'lewis6991/gitsigns.nvim'
+        use 'lewis6991/gitsigns.nvim'
         -- Remove this later
         use 'tpope/vim-fugitive'
 
