@@ -18,7 +18,8 @@ set termguicolors
 let mapleader = " "
 
 " Copy to clipboard
-nnoremap <leader>y "+y
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 lua require('rainbow')
 
