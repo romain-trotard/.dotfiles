@@ -21,5 +21,9 @@ let mapleader = " "
 noremap <leader>y "+y
 noremap <leader>p "+p
 
+" Quickfix navigation
+noremap <leader>k :cprev<CR> 
+noremap <leader>j :cnext<CR> 
+
 lua require('rainbow')
 
