@@ -1,4 +1,4 @@
-vim.g.catppuccin_flavour = "frappe"
+vim.g.catppuccin_flavour = "mocha"
 
 require("catppuccin").setup({
     color_overrides = {
