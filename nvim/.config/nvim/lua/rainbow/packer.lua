@@ -6,7 +6,7 @@ return require('packer').startup({
 
         use { "catppuccin/nvim", as = "catppuccin" }
 
-        use { "nvim-telescope/telescope.nvim", requires = { { 'nvim-lua/plenary.nvim' } } }
+        use { "nvim-telescope/telescope.nvim", requires = { { 'nvim-lua/plenary.nvim' }, { 'nvim-telescope/telescope-live-grep-args.nvim' } }}
         use 'BurntSushi/ripgrep'
         use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
