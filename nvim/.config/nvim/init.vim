@@ -22,8 +22,10 @@ noremap <leader>y "+y
 noremap <leader>p "+p
 
 " Quickfix navigation
-noremap <leader>k :cprev<CR> 
-noremap <leader>j :cnext<CR> 
+noremap <leader>qk :cprev<CR> 
+noremap <leader>qj :cnext<CR> 
+noremap <leader>qo :copen<CR> 
+noremap <leader>qc :cclose<CR> 
 
 lua require('rainbow')
 
