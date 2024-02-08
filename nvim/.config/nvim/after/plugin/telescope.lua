@@ -19,6 +19,7 @@ vim.keymap.set('n', '<leader>fx', require('telescope').extensions.live_grep_args
 vim.keymap.set('v', '<leader>fs', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 
 vim.keymap.set('n', '<leader>sh', builtin.search_history, {})
 vim.keymap.set('n', '<leader>qh', builtin.quickfixhistory, {})
