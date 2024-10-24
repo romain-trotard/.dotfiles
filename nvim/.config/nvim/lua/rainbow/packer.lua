@@ -60,10 +60,10 @@ return require('packer').startup({
         use 'tpope/vim-fugitive'
 
         -- package.json utility
-        use({
-            "vuki656/package-info.nvim",
-            requires = "MunifTanjim/nui.nvim",
-        })
+        -- use({
+        --     "vuki656/package-info.nvim",
+        --     requires = "MunifTanjim/nui.nvim",
+        -- })
     end,
     config = {
         -- Configure the destination folder for snapshot

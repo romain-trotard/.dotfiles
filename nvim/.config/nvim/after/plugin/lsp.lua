@@ -28,6 +28,8 @@ lsp.setup_nvim_cmp({
 lsp.on_attach(function(client, bufnr)
   local bufopts = { remap=false, buffer=bufnr }
 
+  -- require("twoslash-queries").attach(client, bufnr)
+
   vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = true})
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)

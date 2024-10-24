@@ -8,7 +8,7 @@ require('gitsigns').setup{
             vim.keymap.set(mode, l, r, opts)
         end
         
-        map('n', '<leader>gb', gs.toggle_current_line_blame)
+        -- map('n', '<leader>gb', gs.toggle_current_line_blame)
     end
 }
 --
