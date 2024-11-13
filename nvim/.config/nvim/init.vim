@@ -27,5 +27,8 @@ noremap <leader>qj :cnext<CR>
 noremap <leader>qo :copen<CR> 
 noremap <leader>qc :cclose<CR> 
 
+" Enable line numbers in netrw
+autocmd FileType netrw setlocal number relativenumber
+
 lua require('rainbow')
 
