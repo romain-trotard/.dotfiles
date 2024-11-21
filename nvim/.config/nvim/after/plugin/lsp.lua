@@ -6,6 +6,7 @@ lsp.ensure_installed({
     'gopls',
     'astro',
     'svelte',
+    'eslint',
 })
 
 local cmp = require('cmp')
@@ -42,6 +43,17 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set('n', '<space>dj', vim.diagnostic.goto_next, bufopts)
   vim.keymap.set('n', '<space>dk', vim.diagnostic.goto_prev, bufopts)
   vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", bufopts)
+  
+
+  vim.keymap.set("n", "<leader>ef", function()
+    vim.lsp.buf.format({
+        filter = function(client)
+            return client.name == "eslint"
+        end,
+        async = true,
+    })
+    end, { desc = "Format with ESLint" })
+
 end)
 
 lsp.setup()
