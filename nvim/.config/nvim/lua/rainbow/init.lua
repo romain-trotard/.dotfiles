@@ -1,4 +1,5 @@
 require('rainbow.packer');
 
--- Treesitter seems to add this command, I don't care delete it
-vim.cmd('delcommand EditQuery');
+-- I always want `:E` to execute `Explore` not matter plugin that I am using
+vim.api.nvim_create_user_command("E", "Explore", {});
+
